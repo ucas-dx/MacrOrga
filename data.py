@@ -78,16 +78,16 @@ mask_transform = transforms.Compose([
     lambda x: torch.as_tensor(x, dtype=torch.float32)
 ])
 
-# root_dir_train = r"PATH FOR YOUR DATA"
-# root_dir_Val = r'PATH FOR YOUR DATA'
+root_dir_train =r'test_data'
+root_dir_Val = r'test_data'
 root_dir_test = r'test_data'
 
 
 
-#cell_dataset_train = CellSegmentationDataset(root_dir_train, image_transform=image_transform_train, mask_transform=mask_transform)
+cell_dataset_train = CellSegmentationDataset(root_dir_train, image_transform=image_transform_train, mask_transform=mask_transform)
 cell_dataset_test = CellSegmentationDataset(root_dir_test, image_transform=image_transform_train, mask_transform=mask_transform)
-#cell_dataset_val = CellSegmentationDataset(root_dir_Val, image_transform=image_transform_train, mask_transform=mask_transform)
+cell_dataset_val = CellSegmentationDataset(root_dir_Val, image_transform=image_transform_train, mask_transform=mask_transform)
 
-#train_loader = torch.utils.data.DataLoader(cell_dataset_train, batch_size=4, shuffle=True, num_workers=0)
+train_loader = torch.utils.data.DataLoader(cell_dataset_train, batch_size=4, shuffle=True, num_workers=0)
 test_loader = torch.utils.data.DataLoader(cell_dataset_test, batch_size=1, shuffle=False, num_workers=0)
-#Val_loader = torch.utils.data.DataLoader(cell_dataset_val, batch_size=1, shuffle=False, num_workers=0)
+Val_loader = torch.utils.data.DataLoader(cell_dataset_val, batch_size=1, shuffle=False, num_workers=0)
